@@ -5,6 +5,8 @@ import { LoginStore } from "../../store/Store";
 import { WasteCollection, BankSampah } from "../../midleware/Api";
 import { WasteTypeData } from "../../midleware/Utils";
 import { useFormik } from "formik";
+import { FaTrashAlt } from "react-icons/fa";
+import { FaMoneyBill } from "react-icons/fa";
 
 const Dashboard = () => {
   const { token } = LoginStore();
@@ -101,8 +103,56 @@ const Dashboard = () => {
   return (
     <>
       <div className="w-full p-5">
-        <div className="w-full flex flex-wrap mt-3">
-          <div className="w-full sm:w-1/3  p-3 ">
+        <div className="w-full flex gap-3 mt-3 lg:flex-nowrap flex-wrap">
+          <div className="w-full bg-white rounded-md">
+            <div className="p-3">
+              <div className="text-gray-500 ">Total Sampah Bulan Ini</div>
+              <div className="flex items-center justify-between">
+                <div className="text-[1.8rem] font-bold text-blue-700">
+                  300 gram
+                </div>
+                <div>
+                  <FaTrashAlt color="blue" size={"1.5rem"} />
+                </div>
+              </div>
+              <div className="text-xs text-gray-500">
+                21% meningkat blablablabla
+              </div>
+            </div>
+          </div>
+          <div className="w-full bg-white rounded-md">
+            <div className="p-3">
+              <div className="text-gray-500 ">Total Sampah Hari Ini</div>
+              <div className="flex items-center justify-between">
+                <div className="text-[1.8rem] font-bold text-green-700">
+                  300 gram
+                </div>
+                <div>
+                  <FaTrashAlt color="green" size={"1.5rem"} />
+                </div>
+              </div>
+              <div className="text-xs text-gray-500">
+                21% meningkat blablablabla
+              </div>
+            </div>
+          </div>
+          <div className="w-full bg-white rounded-md">
+            <div className="p-3">
+              <div className="text-gray-500 ">Total Penjualan Bulan Ini</div>
+              <div className="flex items-center justify-between">
+                <div className="text-[1.8rem] font-bold text-red-700">
+                  Rp 102390
+                </div>
+                <div>
+                  <FaMoneyBill color="red" size={"1.9rem"} />
+                </div>
+              </div>
+              <div className="text-xs text-gray-500">
+                21% meningkat blablablabla
+              </div>
+            </div>
+          </div>
+          {/* <div className="w-full sm:w-1/3  p-3 ">
             <div className="w-full bg-white rounded-md flex justify-center items-center relative  overflow-hidden">
               <div className="w-24 h-52 py-10">
                 <div className="w-full h-full bg-green-500 rounded-full blur-xl"></div>
@@ -121,8 +171,8 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-full sm:w-1/3  p-3 ">
+          </div> */}
+          {/* <div className="w-full sm:w-1/3  p-3 ">
             <div className="w-full bg-white rounded-md flex justify-center items-center relative  overflow-hidden">
               <div className="w-24 h-52 py-10">
                 <div className="w-full h-full bg-green-500 rounded-full blur-xl"></div>
@@ -141,8 +191,8 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-full sm:w-1/3  p-3 ">
+          </div> */}
+          {/* <div className="w-full sm:w-1/3  p-3 ">
             <div className="w-full bg-white rounded-md flex justify-center items-center relative  overflow-hidden">
               <div className="w-24 h-52 py-10">
                 <div className="w-full h-full bg-green-500 rounded-full blur-xl"></div>
@@ -161,7 +211,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="w-full flex justify-end gap-3 p-3 flex-wrap">
