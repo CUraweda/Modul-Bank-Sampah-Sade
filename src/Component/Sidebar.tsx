@@ -4,8 +4,7 @@ import { iconMapping } from "../component/IconMapping";
 import logo from "../assets/sade.png";
 import { Link } from "react-router-dom";
 import data from "../data/Sidebar.json";
-
-// import karywan from "../data/karyawan.json"
+import "../index.css";
 
 interface Menu {
   title: string;
@@ -32,16 +31,16 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div className="drawer lg:drawer-open">
+      <div className="drawer xl:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-side">
+        <div className="drawer-side scrollbar-hide">
           <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
             className="drawer-overlay"
           />
-          <ul className="menu p-4 w-80 bg-base-100 min-h-screen">
-            <div className="w-full flex justify-between mb-10 items-center  pb-6">
+          <ul className="menu p-4 w-80 bg-white border-r-2 min-h-screen overflow-y-auto scrollbar-hide">
+            <div className="w-full flex justify-between mb-10 items-center pb-6">
               <div className="flex justify-center items-center gap-1">
                 <img src={logo} alt="logo" className="w-16" />
                 <p className="sm:text-lg text-lg font-semibold">
@@ -55,7 +54,7 @@ const Sidebar = () => {
                 <BsListNested />
               </label>
             </div>
-            <ul className="menu srounded-lg max-w-xs w-full text-gray-500">
+            <ul className="menu rounded-lg max-w-xs w-full text-gray-500">
               {data.map((item: Menu, index: number) => (
                 <React.Fragment key={`menu-` + index}>
                   {item.submenu ? (

@@ -7,23 +7,23 @@
     "subtitle": [
       {
         "name": "Leson Plan",
-        "url": "guru/leson-plan"
+        "url": "/guru/leson-plan"
       },
       {
         "name": "Pengumuman",
-        "url": "guru/pengumuman"
+        "url": "/guru/pengumuman"
       },
       {
         "name": "ODFYC",
-        "url": "guru/odfyc"
+        "url": "/guru/odfyc"
       },
       {
         "name": "Prestasi",
-        "url": "guru/prestasi"
+        "url": "/guru/prestasi"
       },
       {
         "name": "Presensi",
-        "url": "guru/presensi"
+        "url": "/guru/presensi"
       }
     ]
   },
@@ -35,11 +35,11 @@
     "subtitle": [
       {
         "name": "Jenis Sampah",
-        "url": "bank-sampah/jenis-sampah"
+        "url": "/bank-sampah/jenis-sampah"
       },
       {
         "name": "Laporan",
-        "url": "bank-sampah/laporan"
+        "url": "/bank-sampah/laporan"
       }
     ]
   },
@@ -51,11 +51,11 @@
     "subtitle": [
       {
         "name": "Pemasukan",
-        "url": "keuangan/pemasukan"
+        "url": "/keuangan/pemasukan"
       },
       {
         "name": "Laporan",
-        "url": "keuangan/laporan"
+        "url": "/keuangan/laporan"
       }
     ]
   },
@@ -63,35 +63,35 @@
     "submenu": true,
     "title": "HRD",
     "icon": "<IoPeopleOutline />",
-    "url": "/admin/rekap-sampah",
+    "url": "",
     "subtitle": [
       {
         "name": "Lowongan",
-        "url": "hrd/lowongan"
+        "url": "/hrd/lowongan"
       },
       {
         "name": "Magang",
-        "url": "hrd/magang"
+        "url": "/hrd/magang"
       },
       {
         "name": "Presensi",
-        "url": "hrd/presensi"
+        "url": "/hrd/presensi"
       },
       {
         "name": "Training",
-        "url": "hrd/training"
+        "url": "/hrd/training"
       },
       {
         "name": "Karyawan",
-        "url": "hrd/karyawan"
+        "url": "/hrd/karyawan"
       },
       {
         "name": "Penilaian",
-        "url": "hrd/penilaian"
+        "url": "/hrd/penilaian"
       },
       {
         "name": "Gaji",
-        "url": "hrd/gaji"
+        "url": "/hrd/gaji"
       }
     ]
   },
@@ -103,11 +103,11 @@
     "subtitle": [
       {
         "name": "Layanan",
-        "url": "ticketing/layanan"
+        "url": "/ticketing/layanan"
       },
       {
         "name": "Pendapatan Layanan",
-        "url": "ticketing/pendapatan-layanan"
+        "url": "/ticketing/pendapatan-layanan"
       }
     ]
   },
@@ -119,11 +119,11 @@
     "subtitle": [
       {
         "name": "Hasil Pendaftaran",
-        "url": "pmb/hasil-pendaftaran"
+        "url": "/pmb/hasil-pendaftaran"
       },
       {
         "name": "Proses Daftar",
-        "url": "pmb/proses-daftar"
+        "url": "/pmb/proses-daftar"
       }
     ]
   }

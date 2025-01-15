@@ -1,8 +1,10 @@
 import { BsList } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { LoginStore } from "../store/Store";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { nama } = LoginStore();
 
   const logout = () => {
     sessionStorage.clear();
@@ -11,10 +13,10 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar shadow-md bg-base-100">
+      <div className="navbar border-b-2 bg-base-100">
         <div className="flex-1">
           <label
-            className="btn btn-ghost text-3xl lg:hidden"
+            className="btn btn-ghost text-3xl xl:hidden"
             htmlFor="my-drawer-2"
           >
             <BsList />
@@ -22,7 +24,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex gap-5">
-          <div>Username</div>
+          <div>{nama}</div>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
