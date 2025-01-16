@@ -46,7 +46,7 @@ const LesonPlan = () => {
 
   return (
     <div className="p-6">
-      <div className="text-center text-2xl">Leson Plan</div>
+      <div className="text-center text-2xl">Lesson Plan</div>
 
       {/* card section 1 */}
       <div className="p-6">

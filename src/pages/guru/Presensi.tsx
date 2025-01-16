@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import { Guru } from "../../midleware/Api";
 import { LoginStore } from "../../store/Store";
 
-const ODFYC = () => {
+const Presensi = () => {
   const [fetchData, setFetchData] = useState<any[]>([]);
   const [odfyc, setOdfyc] = useState<any>();
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); // State untuk loading
   const { token } = LoginStore();
 
   const FetchData = async () => {
-    setLoading(true);
+    setLoading(true); // Set loading menjadi true saat fetch data
     try {
       const response = await Guru.GetFullDataOdfyc(token, page);
       const responseCard = await Guru.GetDataOdfyc(token);
@@ -23,7 +23,7 @@ const ODFYC = () => {
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(false);
+      setLoading(false); // Set loading menjadi false setelah data diterima
     }
   };
 
@@ -122,7 +122,7 @@ const ODFYC = () => {
 
   return (
     <div className="p-6">
-      <div className="text-center text-2xl">One Day For Your Country</div>
+      <div className="text-center text-2xl">Presensi</div>
 
       {/* card section 1 */}
       {loading ? (
@@ -209,10 +209,10 @@ const ODFYC = () => {
                   </td>
                   <td className="px-6 py-4 text-[#404040] font-light text-center">
                     {item?.plan_date
-                      ? JSON.parse(item?.plan_date).map(
+                      ? JSON.parse(item.plan_date).map(
                           (plan: any, index: number) => (
                             <div key={index}>
-                              <span>{plan?.date}</span>
+                              <span>{plan.date}</span>
                             </div>
                           )
                         )
@@ -222,58 +222,49 @@ const ODFYC = () => {
                     {item?.plan_date
                       ? JSON.parse(item.plan_date).map(
                           (plan: any, index: number) => {
-                            if (plan?.start && plan?.end) {
-                              const startTime = plan.start.split(":");
-                              const endTime = plan.end.split(":");
+                            const startTime = plan.start.split(":");
+                            const endTime = plan.end.split(":");
 
-                              if (
-                                startTime.length === 2 &&
-                                endTime.length === 2
-                              ) {
-                                const start = new Date(
-                                  0,
-                                  0,
-                                  0,
-                                  parseInt(startTime[0]),
-                                  parseInt(startTime[1]),
-                                  0
-                                );
-                                const end = new Date(
-                                  0,
-                                  0,
-                                  0,
-                                  parseInt(endTime[0]),
-                                  parseInt(endTime[1]),
-                                  0
-                                );
+                            const start = new Date(
+                              0,
+                              0,
+                              0,
+                              parseInt(startTime[0]),
+                              parseInt(startTime[1]),
+                              0
+                            );
+                            const end = new Date(
+                              0,
+                              0,
+                              0,
+                              parseInt(endTime[0]),
+                              parseInt(endTime[1]),
+                              0
+                            );
 
-                                const durationMinutes =
-                                  (end.getTime() - start.getTime()) /
-                                  (1000 * 60);
+                            const durationMinutes =
+                              (end.getTime() - start.getTime()) / (1000 * 60);
 
-                                return (
-                                  <div key={index}>
-                                    <span>{durationMinutes} minutes</span>
-                                  </div>
-                                );
-                              }
-                            }
-                            return null;
+                            return (
+                              <div key={index}>
+                                <span>{durationMinutes} minutes</span>
+                              </div>
+                            );
                           }
                         )
-                      : "0 minutes"}
+                      : "-"}
                   </td>
 
                   <td className="px-6 py-4 text-center">
                     <button
                       className={`btn btn-outline text-center btn-sm text-xs ${
                         item?.status === "Selesai"
-                          ? "text-green-500 border-green-500 hover:text-green-500 hover:border-green-500"
+                          ? "text-green-500 border-green-500"
                           : item?.status === "Menunggu Pelaksanaan"
-                          ? "text-red-500 border-red-500 hover:text-red-500 hover:border-red-500"
+                          ? "text-red-500 border-red-500"
                           : item?.status === "Dalam Pelaksanaan"
-                          ? "text-yellow-500 border-yellow-500 hover:text-yellow-500 hover:border-yellow-500"
-                          : "text-blue-500 border-blue-500 hover:text-blue-500 hover:border-blue-500"
+                          ? "text-yellow-500 border-yellow-500"
+                          : "text-blue-500 border-blue-500"
                       }`}
                     >
                       {item?.status || "-"}
@@ -336,4 +327,4 @@ const ODFYC = () => {
   );
 };
 
-export default ODFYC;
+export default Presensi;
