@@ -21,13 +21,13 @@ type subtitle = {
 };
 
 const Sidebar = () => {
-  const Side = sessionStorage.getItem('side') || '/';
-  
+  const Side = sessionStorage.getItem("side") || "/";
+
   const [activeMenuItem, setActiveMenuItem] = useState<string>(Side);
 
   const handleMenuItemClick = (name: string) => {
     setActiveMenuItem(name);
-    sessionStorage.setItem('side', name);
+    sessionStorage.setItem("side", name);
   };
 
   return (
