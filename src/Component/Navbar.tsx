@@ -1,8 +1,10 @@
-import logo from "../assets/sade.png";
+import { BsList } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { LoginStore } from "../store/Store";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { nama } = LoginStore();
 
   const logout = () => {
     sessionStorage.clear();
@@ -11,17 +13,18 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-md px-5">
-        <div className="flex-1 gap-2">
-          <div className="w-16">
-            <img src={logo} alt="" />
-          </div>
-          <div className="flex flex-col font-bold">
-            <span>Sekolah Alam</span>
-            <span>Depok</span>
-          </div>
+      <div className="navbar border-b-2 bg-base-100">
+        <div className="flex-1">
+          <label
+            className="btn btn-ghost text-3xl xl:hidden"
+            htmlFor="my-drawer-2"
+          >
+            <BsList />
+          </label>
         </div>
-        <div className="flex-none">
+
+        <div className="flex gap-5">
+          <div>{nama}</div>
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
@@ -30,21 +33,23 @@ const Navbar = () => {
             >
               <div className="w-10 rounded-full">
                 <img
-                  alt="Tailwind CSS Navbar component"
+                  alt=""
                   src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg"
                 />
               </div>
             </div>
-            <ul
+            {/* <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
             >
-              <li className="">
-                <a className="text-red-500" onClick={logout}>
-                  Logout
-                </a>
+              <li>
+                <a className="justify-between">Profile</a>
               </li>
-            </ul>
+
+              <li onClick={logout} className="text-red-500">
+                <a>Logout</a>
+              </li>
+            </ul> */}
           </div>
         </div>
       </div>

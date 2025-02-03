@@ -1,5 +1,5 @@
 import create, { SetState } from "zustand";
-import { LoginProps, StoreProps } from "./Utils";
+import { LoginProps } from "./Utils";
 
 const LoginStore = create<LoginProps>((set: SetState<LoginProps>) => ({
   token: localStorage.getItem("token"),
@@ -16,23 +16,8 @@ const LoginStore = create<LoginProps>((set: SetState<LoginProps>) => ({
     set({ token: null });
   },
 
-  role: sessionStorage.getItem("role"),
-  setRole: (role) => {
-    if (role) {
-      sessionStorage.setItem("role", role);
-    } else {
-      sessionStorage.removeItem("role");
-    }
-    set({ role });
-  },
+  nama: "",
+  setNama: (nama: string) => set({ nama }),
 }));
 
-const useProps = create<StoreProps>((set) => ({
-  idKelas: "",
-  setIdKelas: (idKelas: string) => set({ idKelas }),
-
-  tahun: "",
-  setTahun: (tahun: string) => set({ tahun }),
-}));
-
-export { LoginStore, useProps };
+export { LoginStore };
